@@ -21,4 +21,3 @@ jobs:
          touch test-action.txt
          echo "completed" > test-action.txt
 ```
-test
