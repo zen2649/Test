@@ -21,18 +21,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Deploy with ssh
+      #- uses: actions/checkout@v1
+      - name: Push to server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          password: ${{ secrets.KEY }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-           cd ~/var/www/html
-           git pull origin main
-           git status
-           service apache2 restart
+           cd /var/www/html
+           touch test.txt
