@@ -33,6 +33,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
            cd ~/var/www/html
-           git pull origin main
-           git status
-           service apache2 restart
+           touch test.txt
