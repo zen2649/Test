@@ -17,6 +17,6 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.KEY }}
         script: |
-         cd /var/www/html/
-         touch test-action.txt
-         echo "completed" > test-action.txt
+         cd /root/Test
+         git pull
+         git status
